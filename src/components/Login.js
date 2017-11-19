@@ -6,12 +6,12 @@ class Login extends Component {
         super(props);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.state = {password: '', username: ''};
+        this.state = {password: '', username: '', validForm: true};
     }
     render() {
         return (<div className='login'>
-            <Header key={0}>Login</Header>
-            <Form key={1}>
+            <Header>Login</Header>
+            <Form>
                 <Form.Field>
                     <label>Username</label>
                     <input name='username'
@@ -27,17 +27,26 @@ class Login extends Component {
                 </Form.Field>
                 <Button onClick={this.handleSubmit} type='submit'>Submit</Button>
             </Form>
+            {!this.state.validForm && <Header className='error-message'>Fill all the fields</Header>}
         </div>);
     }
 
     handleSubmit(event) {
-        this.props.onLoginSubmit(this.state);
+        this.formValidation() && this.props.onLoginSubmit(this.state);
         event.preventDefault();
     }
 
     handleChange(event) {
         const field = event.target.name;
+        this.formValidation();
         this.setState({[field]: event.target.value});
+    }
+
+    formValidation() {
+        const {username, password} = this.state;
+        const validForm = username !== '' && password !== '';
+        this.setState({validForm});
+        return validForm;
     }
 }
 

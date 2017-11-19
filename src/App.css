@@ -1,2 +1,5 @@
-.login {
+.App .error-message {
+  color: red; }
+
+.App .login {
   padding: 2rem; }
