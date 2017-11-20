@@ -1,10 +1,11 @@
 
 .App {
-
+  padding: 1rem;
   .error-message {
     color: red;
   }
   .login {
     padding: 2rem;
+    max-width: 30rem;
   }
 }

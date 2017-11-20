@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
-import Login from './components/Login'
-import Dashboard from './components/Dashboard'
+import Login from './containers/Login'
+import Dashboard from './containers/Dashboard'
 import loginService from './services/loginService'
 import {Header} from 'semantic-ui-react'
 

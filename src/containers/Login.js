@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Button, Form , Header} from 'semantic-ui-react'
+import React, {Component} from 'react';
+import {Button, Form, Header} from 'semantic-ui-react'
 
 class Login extends Component {
     constructor(props) {
@@ -8,6 +8,7 @@ class Login extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.state = {password: '', username: '', validForm: true};
     }
+
     render() {
         return (<div className='login'>
             <Header>Login</Header>
@@ -15,15 +16,15 @@ class Login extends Component {
                 <Form.Field>
                     <label>Username</label>
                     <input name='username'
-                            onChange={this.handleChange}
+                           onChange={this.handleChange}
                            value={this.state.username}
-                        placeholder='Username' />
+                           placeholder='Username'/>
                 </Form.Field>
                 <Form.Field>
                     <label>Password</label>
                     <input onChange={this.handleChange}
                            value={this.state.password}
-                           type='password' name='password' placeholder='Password' />
+                           type='password' name='password' placeholder='Password'/>
                 </Form.Field>
                 <Button onClick={this.handleSubmit} type='submit'>Submit</Button>
             </Form>
@@ -38,8 +39,7 @@ class Login extends Component {
 
     handleChange(event) {
         const field = event.target.name;
-        this.formValidation();
-        this.setState({[field]: event.target.value});
+        this.setState({[field]: event.target.value, validForm: true});
     }
 
     formValidation() {

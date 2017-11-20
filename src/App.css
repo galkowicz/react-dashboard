@@ -1,5 +1,7 @@
-.App .error-message {
-  color: red; }
-
-.App .login {
-  padding: 2rem; }
+.App {
+  padding: 1rem; }
+  .App .error-message {
+    color: red; }
+  .App .login {
+    padding: 2rem;
+    max-width: 30rem; }
