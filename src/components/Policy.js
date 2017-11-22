@@ -89,12 +89,7 @@ class Policy extends Component {
     }
 
     handleDiscard() {
-        this.setState({
-            tempname: '',
-            tempgroup: '',
-            tempmode: '',
-            editMode: false
-        });
+        this.setState({editMode: false});
     }
 }
 
